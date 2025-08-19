@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { Home, PlusCircle, Eye, PanelLeft, Search } from 'lucide-react';
+import { Home, PlusCircle, Eye, PanelLeft } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Button } from '../components/ui/button';
 import {
@@ -11,7 +11,7 @@ import {
     DropdownMenuTrigger,
   } from '../components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '../components/ui/sheet';
-import { Input } from '../components/ui/input';
+// import { Input } from '../components/ui/input';
 import avatar from '../assets/images/avatars/avatar-2.png';
 
 const DashboardLayout = () => {
