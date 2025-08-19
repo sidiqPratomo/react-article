@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getArticles, type Article } from '../services/api';
+import { getArticles } from '../services/api';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '../components/ui/card';
 import { useMemo, useState } from 'react';
 import { Button } from '../components/ui/button';

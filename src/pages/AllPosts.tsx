@@ -81,7 +81,7 @@ const AllPosts = () => {
   const columns = [
     columnHelper.accessor('title', {
       header: 'Title',
-      cell: (info) => <span className="font-medium">{info.getValue()}</span>,
+      cell: (info) => <span className="font-medium block truncate" title={info.getValue()}>{info.getValue()}</span>,
     }),
     columnHelper.accessor('category', {
       header: 'Category',
@@ -129,7 +129,7 @@ const AllPosts = () => {
   const trashedColumns = [
     columnHelper.accessor('title', {
         header: 'Title',
-        cell: (info) => <span className="font-medium">{info.getValue()}</span>,
+        cell: (info) => <span className="font-medium block truncate" title={info.getValue()}>{info.getValue()}</span>,
       }),
       columnHelper.accessor('category', {
         header: 'Category',
@@ -206,8 +206,14 @@ const AllPosts = () => {
 
   const renderTable = (table: ReactTable<Article>) => (
     <div className="space-y-4">
-        <div className="rounded-md border">
-      <Table>
+        <div className="rounded-md border overflow-x-auto">
+      <Table className="w-full table-fixed">
+        <colgroup>
+          <col className="w-[50%]" />
+          <col className="w-[20%]" />
+          <col className="w-[20%]" />
+          <col className="w-[10%]" />
+        </colgroup>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -263,7 +269,7 @@ const AllPosts = () => {
   return (
     <div className="space-y-4">
         <h1 className="text-3xl font-bold">All Posts</h1>
-    <Tabs value={activeTab} onValueChange={setActiveTab}>
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
       <TabsList>
         <TabsTrigger value="published">Published</TabsTrigger>
         <TabsTrigger value="drafts">Drafts</TabsTrigger>
